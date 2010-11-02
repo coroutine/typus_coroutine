@@ -1,0 +1,23 @@
+A plugin to enable Coroutine's custom Typus extensions.
+
+Includes:
+  
+  * Authlogic compatibility
+  * Fancy styles
+  * Compatibility with Rails 3+
+
+To Use:
+	
+	 * Add this gem to your gemfile.
+
+	 $ rails generate typus_coroutine
+
+   * a login_url and logout_url should be mapped in the routes.rb file
+   * "include Typus::AuthlogicUser" should be in your User model
+   * config/initializers/typus.rb:
+       config.authentication  = :authlogic
+       config.user_class_name = "User"
+   * You can define "typus_role_name" in your User model to return a string that corresponds to the role
+     for that user in the application_role.yml. DEFAULT IS "admin" SO PLEASE CHANGE THIS.
+   
+   
