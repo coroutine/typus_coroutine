@@ -37,7 +37,7 @@ body {
   height: 100%;
 }
 
-label { display: block; font-weight: bold; margin: 0 0 5px 0; }
+label { display: block; font-weight: bold; font-size: 1.1em; margin: 0 0 5px 0; }
 strong { font-weight: bold; }
 em { font-style: italic; }
 
@@ -120,7 +120,7 @@ a:hover { color: #333; text-decoration: underline; }
 
 /* @group Content */
 
-#content { margin: 15px 0 0 0; clear: both; }
+#content { margin: 25px 0 0 0; clear: both; }
 
 #content h2 { font-size: 1.5em; margin: 0.5em 0; }
 #content h2 small { font-size: 0.75em; }
@@ -156,28 +156,51 @@ a:hover { color: #333; text-decoration: underline; }
 
 #sidebar {
   width: 960px;
+  height: 30px;
+  margin-top: 5px;
 }
 
 #sidebar h2 { font-size: 1.5em; margin: 1.1em 0 0 0; }
 
-#sidebar h3 {
-  font-size:                  1.0em;
+#sidebar a h3 {
   padding:                    0.5em;
-  background:                 #ccc;
+  background:                 #eee;
   padding:                    5px 10px;
+  display:                    block;
+  margin-right:               10px;
+  -webkit-border-radius:      10px;
+  -moz-border-radius:         10px;
+  border-radius:              10px;
+  border:                     1px solid #aaa;
+}
+
+#sidebar a:hover h3 {
+  background:                 #ddd;
+  border:                     1px solid #888;
+  color:                      black;  
+}
+
+#sidebar a h3.selected {
+  background:                 #1378de;
+  color:                      white;
+  border:                     1px solid #26c;
+}
+
+#sidebar h3 a:hover { color: #FFF; }
+
+#sidebar h3 {
   float:                      left;
-  margin-right:               5px;
-  -webkit-border-radius:      5px;
-  -moz-border-radius:         5px;
-  border-radius:              5px;
+  font-size:                  1.0em;
+  font-weight:                normal;
 }
 
 #sidebar ul {
+  border:                     1px solid #ccc;
+  padding:                    5px;
   margin-top:                 15px;
   float:                      right;
 }
 
-#sidebar h3 a { color: #FFF; }
 #sidebar ul { font-weight: bold; }
 #sidebar ul li { padding: 0.25em 0.5em; display: inline; }
 
@@ -188,18 +211,8 @@ a:hover { color: #333; text-decoration: underline; }
 
 /* @group Footer */
 
-#footer_wrapper {
-/*  bottom: 0;
-  height: 50px;
-  position: absolute;
-  width: 100%;
-  z-index: -100;
-*/}
-
 #footer { display: none; }
 
-/*#footer { font-size: 0.9em; padding: 20px; }
-*/
 /* @end */
 
 /* @group Fieldsets */
@@ -213,7 +226,7 @@ fieldset.inputs { }
 
   fieldset.inputs input[type='text'],
   fieldset.inputs input[type='password'] {
-    font-size: 20px;
+    font-size: 16px;
     padding: 5px;
     width: 685px;
   }
@@ -229,7 +242,7 @@ fieldset.inputs { }
     width: 691px;
   }
 
-  fieldset.inputs select { border: 1px solid #999; font-size: 1.20em; }
+  fieldset.inputs select { border: 1px solid #999; font-size: 1.1em; }
 
   fieldset.inputs textarea:focus { background: #FFFCE1; }
   fieldset.inputs label.inline_label { display: inline; }
@@ -240,7 +253,7 @@ fieldset.buttons { }
 
 /* @group Content Tables */
 
-#content table { margin-bottom: 2em!important; width: 100%; text-align: left; }
+#content table { margin-bottom: 2em!important; width: 100%; text-align: left; border: 1px solid #ccc; }
 #content table a { }
 #content table th { background: #242527; color: #FFF; padding: 6px; }
 #content table th a { color: #FFF!important; text-decoration: none; }
@@ -254,6 +267,16 @@ fieldset.buttons { }
 
 /* @end */
 
+#content > form {
+  background: #eee;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  padding: 1px 10px;
+}
+
+#content .box_relationships { margin-top: 20px; }
+
 /* @group Login Page Dialog */
 
 #account { background: #F3F3F3; }
@@ -263,6 +286,7 @@ fieldset.buttons { }
 #account #box {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+  border-radius: 3px;
   background: #FFF;
   border: 0.1em solid #D3D3D3;
   padding: 1em 2em;
